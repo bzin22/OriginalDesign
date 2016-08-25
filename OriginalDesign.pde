@@ -10,7 +10,7 @@ int x6 = 475; // doorknob
 
 void setup()
 {
-  size(700,700);
+  size(1000,1000);
   noLoop();
 }
 void draw()
@@ -35,10 +35,10 @@ void draw()
   rect(410, 410, 30, 100); // right leg
 
   fill(10,10,10); // black sleeves
-  rect(330, 270, 30, 100); // left arm
+  quad(360,270, 360,380, 345,380, 345,300); // left arm
 
   fill(10,10,10); // black sleeves
-  rect(440,270,30,100); // right arm
+  quad(440,270, 455,300, 455, 380, 440,380); // right arm
 
   fill(102, 51, 0);
   rect(x1,200,200,350); // door frame
@@ -63,6 +63,12 @@ void draw()
   fill(153,153,0);
   ellipse(x6,375,20,20); // doorknob
   x6 = x6 - 50;
+
+  if (x1<100) // Lighting
+  {
+    fill(255,255,255);
+    quad(300,550, 500,550, 375,700, 125,700);
+  }
 }
 void mousePressed()
 {
