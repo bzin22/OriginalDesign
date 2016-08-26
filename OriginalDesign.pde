@@ -1,5 +1,5 @@
 // Bryan Zin: Original Design - Slenderman
-// AP COmputer Science, Mr. Simon, Block 3
+// AP Computer Science, Mr. Simon, Block 3
 
 int x1 = 300; // doorframe
 int x2 = 425; // top right
@@ -10,16 +10,29 @@ int x6 = 475; // doorknob
 
 void setup()
 {
-  size(800,800);
+  size(1000,1000);
   noLoop();
 }
 void draw()
 {
-
-
   background(0,0,0); // black background
   fill(64,64,64); // gray
   rect(300,200,200,350); // behind the door
+
+  stroke(102,51,0);
+  line(400,100,400,0);
+
+  noStroke();
+  fill(255,255,0); // yellow ? 
+  triangle(400,100, 350,125, 450,125); // light fixture above doorway
+
+  textSize(24);
+
+  fill(255,255,255);
+  text("What's inside this door?", 30, 50);
+
+  fill(255,255,255);
+  text("Click to find out!", 30, 80);
 
   fill(255,255,255); // white
   ellipse(400,250,40,40); // face
@@ -66,32 +79,42 @@ void draw()
   ellipse(x6,375,20,20); // doorknob
   x6 = x6 - 50;
 
+  // Door Movement & Lights
+
   if (x1<100) // Lighting from doorway
   {
     fill(255,255,255);
     quad(300,550, 500,550, 375,700, 125,700);
 
+    
+    arc(400,125, 20, 20, 0, 3.14);
   }
+
   if (x1<70)
   {
     x1 = 71;
   }
+
   if (x2<200)
   {
     x2 = 201;
   }
+
   if (x3<100)
   {
     x3 = 101;
   }
+
   if (x4<100)
   {
     x4 = 101;
   }
+
   if (x5<200)
   {
     x5 = 201;
   }
+
   if (x6<234)
   {
     x6 = 235;
